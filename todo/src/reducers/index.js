@@ -1,8 +1,11 @@
-
+import { ADD_TODO, TOGGLE_TODO} from '../actions/index'
 
 const initialState = {
       title: "Kayla's Todo List",
-      todoList: []
+      todoList: [
+            { todo: 'drink water', done: false},
+            { todo: 'run', done: false}
+      ]
 };
 
 function reducer(state = initialState, action) {
@@ -11,6 +14,10 @@ function reducer(state = initialState, action) {
                   return {
                         ...state, 
                         todoList: action.payload
+                  }
+            case TOGGLE_TODO:
+                  return{
+
                   }
             
       }

@@ -5,5 +5,13 @@ export function addTodo(newTodo) {
             type: ADD_TODO,
             payload: newTodo
       };
-}
+};
+
+export const TOGGLE_TODO = 'TOGGLE_TODO';
+export const toggleTodo = done => {
+      return {
+            type: TOGGLE_TODO,
+            payload: done
+      };
+};
 

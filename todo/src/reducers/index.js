@@ -7,18 +7,25 @@ const initialState = {
 function reducer(state = initialState, action) {
       switch (action.type) {
             case ADD_TODO:
-                  const newTodo = {
-                        todo: action.payload,
-                        completed: false
-                  }
                   return {
                         ...state, 
-                        todos: [...state.todos, newTodo]
+                        todos: [
+                              { value: action.payload, completed: false }
+                        ]
                   }
             case TOGGLE_TODO:
                   return{
                         ...state,
-                        todos: state.todos
+                        todos: state.todos.map(todo => {
+                              if (todo.i === action.payload) {
+                                    return {
+                                          ...todo,
+                                          completed: !todo.completed
+                                    }
+                              }
+                              return todo;
+                              
+                        })
                         ///
 
 

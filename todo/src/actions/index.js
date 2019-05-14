@@ -1,17 +1,9 @@
-export const ADD_MOVIE = 'ADD_MOVIE';
-export function addMovie(newMovie) {
-      console.log(newMovie);
+export const ADD_TODO = 'ADD_TODO';
+export function addTodo(newTodo) {
+      console.log(newTodo);
       return {
-            type: ADD_MOVIE,
-            payload: newMovie
+            type: ADD_TODO,
+            payload: newTodo
       };
 }
 
-export const EDIT_MOVIE = 'EDIT_MOVIE';
-export function editMovie(editedMovie) {
-      console.log(editedMovie);
-      return {
-            type: EDIT_MOVIE,
-            payload: editedMovie
-      };
-}

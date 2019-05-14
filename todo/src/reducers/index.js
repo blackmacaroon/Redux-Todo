@@ -1,31 +1,18 @@
 
 
 const initialState = {
-      title: "Kayla's Favorite Movies",
-      movies: [
-            { id: 1 },
-            { name: "Stripes"},
-            { year: "1981"},
-            { favoriteLine: "you can't go, all the plants are gonna die."},
-            { stars: ["Bill Murray", "John Candy", "Harold Ramis"]}
-      ]
+      title: "Kayla's Todo List",
+      todoList: []
 };
 
 function reducer(state = initialState, action) {
       switch (action.type) {
-            case ADD_MOVIE:
+            case ADD_TODO:
                   return {
                         ...state, 
-                        movies: [
-                              ...state.movies,
-                              { name: action.payload }
-                        ]
+                        todoList: action.payload
                   }
-            case EDIT_MOVIE:
-                  return {
-                        ...state,
-                        movies: action.payload
-                  }
+            
       }
 }
 

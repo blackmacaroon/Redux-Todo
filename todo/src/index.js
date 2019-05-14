@@ -8,7 +8,7 @@ import reducer from './reducers/index';
 import './index.css';
 import App from './App';
 
-const store = createStore(reducer);
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 
 const rootElement = document.getElementById('root');

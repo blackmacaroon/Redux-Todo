@@ -21,18 +21,15 @@ function reducer(state = initialState, action) {
                   return{
                         ...state,
                         todos: state.todos.map((todo, i) => {
-                              if (todo.i === action.payload) {
+                              if (i === action.payload) {
                                     return {
                                           ...todo,
                                           completed: !todo.completed
                                     }
                               }
                               return todo;
-                              
+                                 
                         })
-                        ///
-
-
                   }
             default:
                   return state;

@@ -10,6 +10,7 @@ class TodoList extends React.Component {
 
       handleChanges = e => {
             this.setState({ newTodo: e.target.value})
+            // console.log(this.state);
       }
 
       addTodo = e => {
@@ -18,9 +19,9 @@ class TodoList extends React.Component {
             this.setState({ newTodo: '' })
       };
 
-      toggleTodo = (e, id) => {
-            e.preventDefault();
-            this.props.toggleTodo(id);
+      toggleTodo = (i) => {
+            this.props.toggleTodo(i);
+            console.log(this.props);
       }
 
       render() {
@@ -30,7 +31,7 @@ class TodoList extends React.Component {
                         <h1 className='heady'>DO IT NOW</h1>
                         <div className='Todo-List'>
                               {this.props.todos.map((todo, i) => (
-                                    <p  onClick={e => this.toggleTodo(e, i)} key={i}>
+                                    <p  onClick={() => this.toggleTodo(i)} key={i}>
                                           {todo.value}
                                     </p>
 

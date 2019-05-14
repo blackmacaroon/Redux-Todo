@@ -8,10 +8,10 @@ export function addTodo(newTodo) {
 };
 
 export const TOGGLE_TODO = 'TOGGLE_TODO';
-export const toggleTodo = done => {
+export const toggleTodo = i => {
       return {
             type: TOGGLE_TODO,
-            payload: done
+            payload: i
       };
 };
 

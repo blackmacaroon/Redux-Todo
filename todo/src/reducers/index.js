@@ -21,7 +21,7 @@ function reducer(state = initialState, action) {
                               { name: action.payload }
                         ]
                   }
-            case REMOVE_MOVIE:
+            case EDIT_MOVIE:
                   return {
                         ...state,
                         movies: action.payload

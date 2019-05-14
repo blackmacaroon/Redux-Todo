@@ -39,7 +39,7 @@ class TodoList extends React.Component {
                         <h1 className='heady'>DO IT NOW</h1>
                         <div className='Todo-List'>
                               {this.props.todos.map((todo, i) => (
-                                    <p className={this.props.todos.completed = true ? 'completed' : null} onClick={() => this.toggleTodo(i)} key={i}>
+                                    <p className={todo.completed ? 'completed' : null} onClick={() => this.toggleTodo(i)} key={i}>
                                           {todo.value}
                                     </p>
 

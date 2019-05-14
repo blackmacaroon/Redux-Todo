@@ -18,17 +18,34 @@ class TodoList extends React.Component {
             this.setState({ newTodo: '' })
       };
 
+      toggleTodo = (e, i) => {
+            e.preventDefault();
+            this.props.toggleTodo(i);
+      }
+
       render() {
+            console.log(this.props)
             return  (
-                  <React.Fragment>
+                  <div className='container'>
+                        <h1 className='heady'>DO IT NOW</h1>
                         <div className='Todo-List'>
-                              {this.props.todos && this.props.todos.map(todo => (
-                                    <h3 onClick={() => this.toggleTodo(todo.id)} key={todo.id}>
-                                          {todo.name}
-                                    </h3>
+                              {this.props.todos.map((todo, i) => (
+                                    <p>
+                                          {todo.value}
+                                    </p>
+
                               ))}
+
                         </div>
-                  </React.Fragment>
+                        <input
+                              type='text'
+                              placeholder='do something else?'
+                              value={this.state.newTodo}
+                              onChange={this.handleChanges}
+                        >
+                        </input>
+                        <button onClick={this.addTodo}>Gimme</button>
+                  </div>
             )
       }
 }

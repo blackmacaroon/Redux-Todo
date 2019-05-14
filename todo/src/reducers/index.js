@@ -18,7 +18,7 @@ function reducer(state = initialState, action) {
             case TOGGLE_TODO:
                   return{
                         ...state,
-                        todos: state.todos.map(todo, i)
+                        todos: state.todos
                         ///
 
 
